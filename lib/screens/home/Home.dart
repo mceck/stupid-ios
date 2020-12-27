@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:stupid_ios/screens/home/Dock.dart';
-import 'package:stupid_ios/screens/home/models/app-link.dart';
 import 'package:stupid_ios/screens/home/models/folder.dart';
 import 'package:stupid_ios/widgets/ImgButton.dart';
 import 'package:stupid_ios/widgets/dialogs.dart';

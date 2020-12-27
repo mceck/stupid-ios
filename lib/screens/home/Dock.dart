@@ -57,7 +57,7 @@ class Dock extends StatelessWidget {
               ImgButton(
                 onTap: () {},
                 child: Image.asset(
-                  'resource/image/phone.png',
+                  'resource/image/vscode.png',
                   width: kIconSize,
                   height: kIconSize,
                 ),
