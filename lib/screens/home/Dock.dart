@@ -3,6 +3,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:stupid_ios/screens/chat/Chat.dart';
+import 'package:stupid_ios/screens/curriculum/Curriculum.dart';
 import 'package:stupid_ios/screens/dialer/FakeDialer.dart';
 import 'package:stupid_ios/screens/vscode/VsCode.dart';
 import 'package:stupid_ios/widgets/ImgButton.dart';
@@ -37,7 +38,10 @@ class Dock extends StatelessWidget {
                 ),
               ),
               ImgButton(
-                onTap: () {},
+                onTap: () {
+                  Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (ctx) => Curriculum()));
+                },
                 child: Image.asset(
                   'resource/image/safari.png',
                   width: kIconSize,

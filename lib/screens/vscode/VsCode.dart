@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_highlight/flutter_highlight.dart';
-import 'package:flutter_highlight/themes/vs.dart';
+import 'package:flutter_highlight/themes/atom-one-dark.dart';
 
 const String test = '''
 import 'package:flutter/material.dart';
@@ -52,25 +52,30 @@ class _VsCodeState extends State<VsCode> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: HighlightView(
-        // The original code to be highlighted
-        test,
+      backgroundColor: Color(0xff282c34),
+      body: Center(
+        child: SingleChildScrollView(
+          child: HighlightView(
+            // The original code to be highlighted
+            test,
 
-        // Specify language
-        // It is recommended to give it a value for performance
-        language: 'dart',
+            // Specify language
+            // It is recommended to give it a value for performance
+            language: 'dart',
 
-        // Specify highlight theme
-        // All available themes are listed in `themes` folder
-        theme: vsTheme,
+            // Specify highlight theme
+            // All available themes are listed in `themes` folder
+            theme: atomOneDarkTheme,
 
-        // Specify padding
-        padding: EdgeInsets.all(12),
+            // Specify padding
+            padding: EdgeInsets.all(12),
 
-        // Specify text style
-        textStyle: TextStyle(
-          fontFamily: 'My awesome monospace font',
-          fontSize: 16,
+            // Specify text style
+            textStyle: TextStyle(
+              fontFamily: 'SFMono',
+              fontSize: 14,
+            ),
+          ),
         ),
       ),
     );

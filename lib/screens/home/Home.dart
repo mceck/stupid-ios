@@ -1,6 +1,11 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
+import 'package:stupid_ios/screens/chat/Chat.dart';
+import 'package:stupid_ios/screens/curriculum/Curriculum.dart';
 import 'package:stupid_ios/screens/home/Dock.dart';
 import 'package:stupid_ios/screens/home/models/folder.dart';
+import 'package:stupid_ios/screens/vscode/VsCode.dart';
 import 'package:stupid_ios/widgets/ImgButton.dart';
 import 'package:stupid_ios/widgets/dialogs.dart';
 
@@ -30,6 +35,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
+    final kIconSize = (min(MediaQuery.of(context).size.width - 80, 450)) / 4;
     return Scaffold(
       body: Stack(
         children: [
@@ -46,7 +52,71 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                   child: TabBarView(
                     controller: tabController,
                     children: [
-                      Container(),
+                      GridView(
+                          padding: const EdgeInsets.fromLTRB(30, 50, 30, 20),
+                          gridDelegate:
+                              SliverGridDelegateWithFixedCrossAxisCount(
+                            childAspectRatio: 6 / 10,
+                            crossAxisCount: 4,
+                            mainAxisSpacing: 16,
+                            crossAxisSpacing: 16,
+                          ),
+                          children: [
+                            Column(
+                              children: [
+                                ImgButton(
+                                  onTap: () {
+                                    Navigator.of(context).push(
+                                        MaterialPageRoute(
+                                            builder: (ctx) => Chat()));
+                                  },
+                                  child: Image.asset(
+                                    'resource/image/messages.png',
+                                    width: kIconSize,
+                                    height: kIconSize,
+                                  ),
+                                ),
+                                Center(
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(bottom: 5),
+                                    child: FittedBox(
+                                      child: Text(
+                                        'Contact me',
+                                        style: TextStyle(color: Colors.white),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Column(
+                              children: [
+                                ImgButton(
+                                  onTap: () {
+                                    Navigator.of(context).push(
+                                        MaterialPageRoute(
+                                            builder: (ctx) => VsCode()));
+                                  },
+                                  child: Image.asset(
+                                    'resource/image/vscode.png',
+                                    width: kIconSize,
+                                    height: kIconSize,
+                                  ),
+                                ),
+                                Center(
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(bottom: 5),
+                                    child: FittedBox(
+                                      child: Text(
+                                        'VSCode',
+                                        style: TextStyle(color: Colors.white),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ]),
                       GridView(
                         padding: const EdgeInsets.fromLTRB(30, 50, 30, 20),
                         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -121,7 +191,43 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                           ),
                         ],
                       ),
-                      Container(),
+                      GridView(
+                        padding: const EdgeInsets.fromLTRB(30, 50, 30, 20),
+                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          childAspectRatio: 6 / 10,
+                          crossAxisCount: 4,
+                          mainAxisSpacing: 16,
+                          crossAxisSpacing: 16,
+                        ),
+                        children: [
+                          Column(
+                            children: [
+                              ImgButton(
+                                onTap: () {
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                      builder: (ctx) => Curriculum()));
+                                },
+                                child: Image.asset(
+                                  'resource/image/safari.png',
+                                  width: kIconSize,
+                                  height: kIconSize,
+                                ),
+                              ),
+                              Center(
+                                child: Padding(
+                                  padding: const EdgeInsets.only(bottom: 5),
+                                  child: FittedBox(
+                                    child: Text(
+                                      'Curriculum',
+                                      style: TextStyle(color: Colors.white),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
                     ],
                   ),
                 ),
