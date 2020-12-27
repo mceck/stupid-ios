@@ -22,7 +22,7 @@ class _FakeDialerState extends State<FakeDialer> {
                   child: Text(
                     number,
                     textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 42),
+                    style: TextStyle(fontSize: 42, color: Colors.black),
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                   ),
@@ -198,7 +198,7 @@ class Number extends StatelessWidget {
       child: FlatButton(
         padding: const EdgeInsets.all(18),
         onPressed: onTap,
-        color: Colors.grey[350],
+        color: Colors.grey[300],
         shape: CircleBorder(),
         child: Column(
           children: [
