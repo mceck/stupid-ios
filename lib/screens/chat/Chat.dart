@@ -27,7 +27,10 @@ class _ChatState extends State<Chat> {
               clipBehavior: Clip.hardEdge,
               child: Image.asset('resource/image/profile.jpg'),
             ),
-            Text('Mattia')
+            Text(
+              'Mattia',
+              style: TextStyle(color: Colors.black),
+            )
           ],
         ),
       ),

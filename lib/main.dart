@@ -15,6 +15,8 @@ class MyApp extends StatelessWidget {
       home: Home(),
       theme: ThemeData(
         fontFamily: 'SFRegular',
+        textTheme: ThemeData.dark().textTheme,
+        unselectedWidgetColor: Colors.white,
       ),
     );
   }
