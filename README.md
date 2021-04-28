@@ -1,7 +1,7 @@
 # stupid_ios
 
-- [ ] Skills as folder on main screen
-- [ ] Curriculum/About in safari
-- [ ] Contact me in SMS app
-- [ ] Fake dialer
-- [ ] dock icon [dialer, safari cv, contact, ]
+- [x] Skills as folder on main screen
+- [x] Curriculum/About in safari
+- [x] Contact me in SMS app
+- [x] Fake dialer
+- [x] dock icon [dialer, safari cv, contact, ]
