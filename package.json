@@ -1,0 +1,24 @@
+{
+  "name": "stupid_ios",
+  "version": "1.0.0",
+  "description": "- [x] Skills as folder on main screen - [x] Curriculum/About in safari - [x] Contact me in SMS app - [x] Fake dialer - [x] dock icon [dialer, safari cv, contact, ]",
+  "main": "generate-static-repository.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "gen-repo": "node generate-static-repository.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mceck/stupid-ios.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mceck/stupid-ios/issues"
+  },
+  "homepage": "https://github.com/mceck/stupid-ios#readme"
+}
