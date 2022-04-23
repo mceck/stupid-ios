@@ -40,7 +40,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
       body: Stack(
         children: [
           Image.asset(
-            'resource/image/bg.jpeg',
+            'resource/image/bg.webp',
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,
             fit: BoxFit.cover,
