@@ -18,6 +18,7 @@ class _FakeDialerState extends State<FakeDialer> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                BackButton(color: Colors.blue),
                 Expanded(
                   child: Text(
                     number,
