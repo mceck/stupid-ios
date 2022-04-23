@@ -55,7 +55,7 @@ exec('git ls-tree -r master --name-only', (error, stdout, stderr) => {
             path: p,
             type: 'blob',
             url:
-              'https://raw.githubusercontent.com/mceck/stupid-shell/master/' +
+              'https://raw.githubusercontent.com/mceck/stupid-ios/master/' +
               file,
           });
         }
