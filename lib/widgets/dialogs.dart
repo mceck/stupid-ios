@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:stupid_ios/screens/home/models/folder.dart';
 import 'package:stupid_ios/widgets/ImgButton.dart';
 
-Future<void> showFolder(BuildContext context, Folder f) {
+Future<void> showFolder(BuildContext context, Folder f, [bool fitted = true]) {
   return showGeneralDialog(
     context: context,
     pageBuilder: (BuildContext ctx, Animation<double> animation,
@@ -42,12 +42,18 @@ Future<void> showFolder(BuildContext context, Folder f) {
                       child: Column(
                         children: [
                           app.icon,
-                          FittedBox(
-                            child: Text(
+                          if (fitted)
+                            FittedBox(
+                              child: Text(
+                                app.name,
+                                style: TextStyle(color: Colors.white),
+                              ),
+                            ),
+                          if (!fitted)
+                            Text(
                               app.name,
                               style: TextStyle(color: Colors.white),
                             ),
-                          ),
                         ],
                       ),
                     ))

@@ -133,3 +133,22 @@ final Folder otherSkillFolder = Folder(
     ),
   ],
 );
+
+final Folder prizesFolder = Folder(
+    name: 'Prizes',
+    icon: Image.asset('resource/image/prize.png'),
+    apps: [
+      AppLink(
+        name: '1st place\nPlansoft coding challenge 2021',
+        icon: Image.asset('resource/image/plan.png'),
+      ),
+      AppLink(
+        name: '1st place\nCodemotion Sailogy frontend challenge 2021',
+        icon: Image.asset('resource/image/codemotion.png'),
+      ),
+      AppLink(
+        name:
+            '1st place\nCodemotion Lord of code Spanish edition - Frontend 2022',
+        icon: Image.asset('resource/image/codemotion.png'),
+      ),
+    ]);

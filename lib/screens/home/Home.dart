@@ -189,6 +189,25 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                               ],
                             ),
                           ),
+                          ImgButton(
+                            onTap: () {
+                              showFolder(context, prizesFolder, false);
+                            },
+                            child: Column(
+                              children: [
+                                prizesFolder.icon,
+                                Center(
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(bottom: 5),
+                                    child: Text(
+                                      prizesFolder.name,
+                                      style: TextStyle(color: Colors.white),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
                         ],
                       ),
                       GridView(
