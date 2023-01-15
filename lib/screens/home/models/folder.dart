@@ -69,12 +69,12 @@ final Folder backendFolder = Folder(
       icon: Image.asset('resource/image/graphql.png'),
     ),
     AppLink(
-      name: 'Serverless',
-      icon: Image.asset('resource/image/serverless.png'),
-    ),
-    AppLink(
       name: 'Node',
       icon: Image.asset('resource/image/node.png'),
+    ),
+    AppLink(
+      name: 'Rails',
+      icon: Image.asset('resource/image/rails.png'),
     ),
     AppLink(
       name: 'Python',

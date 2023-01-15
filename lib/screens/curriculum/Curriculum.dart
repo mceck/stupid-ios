@@ -54,7 +54,11 @@ class _CurriculumState extends State<Curriculum> {
                   TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
             ),
             Text(
-              '2020 - today - Permanent employee as fullstack deveoper in a consulting and software development company in Florence, collaborating with important companies private companies such as supermarkets and pharmaceutical companies for the development of mainly web and mobile applications',
+              '2022 - today - Permanent employee as fullstack deveoper working from remote in a consulting and software development company located in Brescia, collaborating for the development of mainly web and mobile applications',
+              style: TextStyle(color: Colors.black),
+            ),
+            Text(
+              '2020 - 2022 - Permanent employee as fullstack deveoper in a consulting and software development company in Florence, collaborating with important companies private companies such as supermarkets and pharmaceutical companies for the development of mainly web and mobile applications',
               style: TextStyle(color: Colors.black),
             ),
             SizedBox(height: 15),
