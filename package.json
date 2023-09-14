@@ -8,7 +8,8 @@
     "test": "test"
   },
   "scripts": {
-    "gen-repo": "node generate-static-repository.js"
+    "gen-repo": "node generate-static-repository.js",
+    "deploy": "flutter build web && netlify deploy --prod --dir=build/web"
   },
   "repository": {
     "type": "git",
