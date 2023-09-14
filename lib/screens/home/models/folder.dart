@@ -42,7 +42,7 @@ final Folder frontendFolder = Folder(
       icon: Image.asset('resource/image/vue.png'),
     ),
     AppLink(
-      name: 'Svelt',
+      name: 'Svelte',
       icon: Image.asset('resource/image/svelt.png'),
     ),
     AppLink(
