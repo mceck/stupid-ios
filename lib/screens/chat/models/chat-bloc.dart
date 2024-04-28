@@ -47,7 +47,7 @@ class ChatBloc implements Bloc {
       message.message = message.message.replaceFirst(email, '').trim();
       final bodyStr = json.encode({'email': email, 'message': message.message});
       final result = await http.post(
-        'https://mcdev-home.duckdns.org/mcdev-telegram-bot/contact-me',
+        'https://mcdev-n8n.duckdns.org/webhook/contact-me',
         headers: {'content-type': 'application/json'},
         body: bodyStr,
       );
