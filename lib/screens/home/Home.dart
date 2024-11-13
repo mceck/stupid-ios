@@ -8,6 +8,7 @@ import 'package:stupid_ios/screens/home/models/folder.dart';
 import 'package:stupid_ios/screens/vscode/VsCode.dart';
 import 'package:stupid_ios/widgets/ImgButton.dart';
 import 'package:stupid_ios/widgets/dialogs.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -116,6 +117,31 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                                 ),
                               ],
                             ),
+                            Column(
+                              children: [
+                                ImgButton(
+                                  onTap: () {
+                                    launch('https://github.com/mceck');
+                                  },
+                                  child: Image.asset(
+                                    'resource/image/github.png',
+                                    width: kIconSize,
+                                    height: kIconSize,
+                                  ),
+                                ),
+                                Center(
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(bottom: 5),
+                                    child: FittedBox(
+                                      child: Text(
+                                        'GitHub',
+                                        style: TextStyle(color: Colors.white),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
                           ]),
                       GridView(
                         padding: const EdgeInsets.fromLTRB(30, 50, 30, 20),
@@ -132,7 +158,11 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                             },
                             child: Column(
                               children: [
-                                frontendFolder.icon,
+                                SizedBox(
+                                  child: frontendFolder.icon,
+                                  width: kIconSize,
+                                  height: kIconSize,
+                                ),
                                 Center(
                                   child: Padding(
                                     padding: const EdgeInsets.only(bottom: 5),
@@ -153,7 +183,11 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                             },
                             child: Column(
                               children: [
-                                backendFolder.icon,
+                                SizedBox(
+                                  child: backendFolder.icon,
+                                  width: kIconSize,
+                                  height: kIconSize,
+                                ),
                                 Center(
                                   child: Padding(
                                     padding: const EdgeInsets.only(bottom: 5),
@@ -174,7 +208,11 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                             },
                             child: Column(
                               children: [
-                                otherSkillFolder.icon,
+                                SizedBox(
+                                  child: otherSkillFolder.icon,
+                                  width: kIconSize,
+                                  height: kIconSize,
+                                ),
                                 Center(
                                   child: Padding(
                                     padding: const EdgeInsets.only(bottom: 5),
@@ -195,7 +233,11 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                             },
                             child: Column(
                               children: [
-                                prizesFolder.icon,
+                                SizedBox(
+                                  child: prizesFolder.icon,
+                                  width: kIconSize,
+                                  height: kIconSize,
+                                ),
                                 Center(
                                   child: Padding(
                                     padding: const EdgeInsets.only(bottom: 5),
