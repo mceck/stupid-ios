@@ -11,15 +11,12 @@ class VsDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return DefaultTextStyle(
-      style: TextStyle(color: Colors.white),
-      child: Drawer(
-        elevation: 1,
-        child: Container(
-          color: Color(0xff20242a),
-          child: ListView(
-            children: buildFolder(context, STATIC_REPO['children']),
-          ),
+    return Drawer(
+      elevation: 1,
+      child: Container(
+        color: Color(0xff20242a),
+        child: ListView(
+          children: buildFolder(context, STATIC_REPO['children']),
         ),
       ),
     );
@@ -33,7 +30,10 @@ class VsDrawer extends StatelessWidget {
         return Padding(
           padding: EdgeInsets.only(left: padLeft),
           child: ExpansionTile(
-            title: Text(node['path']),
+            title: Text(
+              node['path'],
+              style: const TextStyle(color: Colors.white),
+            ),
             leading: Image.asset(
               'resource/image/folderico.png',
               width: 16,
@@ -54,7 +54,10 @@ class VsDrawer extends StatelessWidget {
               icoFromExt(node['path']),
               width: 16,
             ),
-            title: Text(node['path']),
+            title: Text(
+              node['path'],
+              style: const TextStyle(color: Colors.white),
+            ),
           ),
         ),
       );
