@@ -1,13 +1,13 @@
 class ChatMessage {
   bool fromYou;
   String message;
-  DateTime timestamp;
+  DateTime? timestamp;
   bool isSending;
 
   ChatMessage({
     this.timestamp,
     this.fromYou = true,
-    this.message,
+    this.message = '',
     this.isSending = false,
   });
 }

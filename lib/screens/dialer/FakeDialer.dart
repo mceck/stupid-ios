@@ -153,7 +153,7 @@ class _FakeDialerState extends State<FakeDialer> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        FlatButton(
+                        TextButton(
                           onPressed: () {
                             ScaffoldMessenger.of(context).showSnackBar(
                               SnackBar(
@@ -161,9 +161,11 @@ class _FakeDialerState extends State<FakeDialer> {
                               ),
                             );
                           },
-                          padding: const EdgeInsets.all(20),
-                          color: Colors.green[400],
-                          shape: CircleBorder(),
+                          style: TextButton.styleFrom(
+                            padding: const EdgeInsets.all(20),
+                            backgroundColor: Colors.green[400],
+                            shape: CircleBorder(),
+                          ),
                           child: Icon(
                             Icons.call,
                             color: Colors.white,
@@ -188,7 +190,8 @@ class Number extends StatelessWidget {
   final String letters;
   final Function() onTap;
 
-  const Number({Key key, this.number, this.letters, this.onTap})
+  const Number(
+      {Key? key, this.number, required this.letters, required this.onTap})
       : super(key: key);
 
   @override
@@ -196,11 +199,13 @@ class Number extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 6, horizontal: 10),
       width: (MediaQuery.of(context).size.width - 60) / 3,
-      child: FlatButton(
-        padding: const EdgeInsets.all(18),
+      child: TextButton(
         onPressed: onTap,
-        color: Colors.grey[300],
-        shape: CircleBorder(),
+        style: TextButton.styleFrom(
+          padding: const EdgeInsets.all(18),
+          backgroundColor: Colors.grey[300],
+          shape: CircleBorder(),
+        ),
         child: Column(
           children: [
             Text(

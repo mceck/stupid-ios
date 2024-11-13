@@ -6,7 +6,7 @@ class Folder {
   final List<AppLink> apps;
   final Image icon;
 
-  const Folder({this.name, this.apps, this.icon});
+  const Folder({this.name = '', required this.apps, required this.icon});
 }
 
 final Folder frontendFolder = Folder(

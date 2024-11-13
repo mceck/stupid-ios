@@ -16,8 +16,8 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
-  TabController tabController;
-  int idx;
+  late TabController tabController;
+
   @override
   void initState() {
     tabController = TabController(initialIndex: 1, length: 3, vsync: this);
@@ -121,7 +121,8 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                               children: [
                                 ImgButton(
                                   onTap: () {
-                                    launch('https://github.com/mceck');
+                                    launchUrl(
+                                        Uri.parse('https://github.com/mceck'));
                                   },
                                   child: Image.asset(
                                     'resource/image/github.png',
@@ -229,14 +230,19 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                           ),
                           ImgButton(
                             onTap: () {
-                              showFolder(context, prizesFolder, false);
+                              showFolder(context, prizesFolder);
                             },
                             child: Column(
                               children: [
                                 SizedBox(
-                                  child: prizesFolder.icon,
                                   width: kIconSize,
                                   height: kIconSize,
+                                  child: Center(
+                                    child: SizedBox(
+                                      height: kIconSize - 16,
+                                      child: prizesFolder.icon,
+                                    ),
+                                  ),
                                 ),
                                 Center(
                                   child: Padding(

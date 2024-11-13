@@ -4,7 +4,8 @@ class ImgButton extends StatelessWidget {
   final Widget child;
   final Function() onTap;
 
-  const ImgButton({Key key, this.child, this.onTap}) : super(key: key);
+  const ImgButton({Key? key, required this.child, required this.onTap})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -1,3 +1,4 @@
+import 'dart:math';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
@@ -9,6 +10,7 @@ Future<void> showFolder(BuildContext context, Folder f, [bool fitted = true]) {
     context: context,
     pageBuilder: (BuildContext ctx, Animation<double> animation,
         Animation<double> secondaryAnimation) {
+      final kIconSize = (min(MediaQuery.of(context).size.width - 80, 450)) / 4;
       return Center(
         child: Container(
           width: MediaQuery.of(context).size.width * 0.8,
@@ -32,32 +34,40 @@ Future<void> showFolder(BuildContext context, Folder f, [bool fitted = true]) {
               mainAxisSpacing: 16,
             ),
             shrinkWrap: true,
-            children: f.apps
-                .map((app) => ImgButton(
-                      onTap: () {
-                        if (app.link != null)
-                          Navigator.of(context).pushReplacement(
-                              MaterialPageRoute(builder: (ctx) => app.link));
-                      },
-                      child: Column(
-                        children: [
-                          app.icon,
-                          if (fitted)
-                            FittedBox(
-                              child: Text(
-                                app.name,
-                                style: TextStyle(color: Colors.white),
-                              ),
-                            ),
-                          if (!fitted)
-                            Text(
-                              app.name,
-                              style: TextStyle(color: Colors.white),
-                            ),
-                        ],
+            children: f.apps.map((app) {
+              final child = SizedBox(
+                width: kIconSize,
+                child: ImgButton(
+                  onTap: () {
+                    if (app.link == null) {
+                      return;
+                    }
+                    Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(builder: (ctx) => app.link!));
+                  },
+                  child: Column(
+                    children: [
+                      SizedBox(
+                        width: kIconSize,
+                        height: kIconSize,
+                        child: app.icon,
                       ),
-                    ))
-                .toList(),
+                      Text(
+                        app.name,
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ],
+                  ),
+                ),
+              );
+              if (!fitted) {
+                return child;
+              }
+              return FittedBox(
+                fit: BoxFit.scaleDown,
+                child: child,
+              );
+            }).toList(),
           ),
         ),
       );

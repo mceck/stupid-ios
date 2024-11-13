@@ -5,8 +5,8 @@ class VsDrawer extends StatelessWidget {
   final Function(String) loadCode;
 
   const VsDrawer({
-    Key key,
-    this.loadCode,
+    Key? key,
+    required this.loadCode,
   }) : super(key: key);
 
   @override
@@ -46,10 +46,8 @@ class VsDrawer extends StatelessWidget {
         padding: EdgeInsets.only(left: padLeft),
         child: InkWell(
           onTap: () {
-            if (loadCode != null) {
-              loadCode(node['url']);
-              Navigator.of(context).pop();
-            }
+            loadCode(node['url']);
+            Navigator.of(context).pop();
           },
           child: ListTile(
             leading: Image.asset(

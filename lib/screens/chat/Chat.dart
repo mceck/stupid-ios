@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:stupid_ios/screens/chat/Messages.dart';
 import 'package:stupid_ios/screens/chat/models/chat-bloc.dart';
-import 'package:stupid_ios/screens/chat/models/chat-message.dart';
 import 'package:stupid_ios/widgets/BlocProvider.dart';
 
 class Chat extends StatefulWidget {

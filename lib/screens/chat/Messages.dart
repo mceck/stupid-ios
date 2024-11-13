@@ -89,7 +89,7 @@ class MessageTile extends StatelessWidget {
   final ChatMessage message;
   final bool isLast;
 
-  const MessageTile(this.message, {this.isLast});
+  const MessageTile(this.message, {this.isLast = false});
 
   @override
   Widget build(BuildContext context) {
@@ -105,11 +105,11 @@ class MessageTile extends StatelessWidget {
               style: TextStyle(color: Colors.grey, fontSize: 10),
             ),
           ),
-        if (isLast && message.timestamp != null && message.isSending != true)
+        if (isLast && message.isSending != true && message.timestamp != null)
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 30),
             child: Text(
-              DateFormat('E HH:mm').format(message.timestamp),
+              DateFormat('E HH:mm').format(message.timestamp!),
               style: TextStyle(color: Colors.grey, fontSize: 10),
             ),
           ),
@@ -120,8 +120,8 @@ class MessageTile extends StatelessWidget {
 
 class MessageBubble extends StatelessWidget {
   const MessageBubble({
-    Key key,
-    @required this.message,
+    Key? key,
+    required this.message,
   }) : super(key: key);
 
   final ChatMessage message;

@@ -3,13 +3,12 @@ import 'package:flutter/material.dart';
 class EmojiText extends StatelessWidget {
   const EmojiText(
     this.text, {
-    Key key,
+    Key? key,
     this.style,
-  })  : assert(text != null),
-        super(key: key);
+  }) : super(key: key);
 
   final String text;
-  final TextStyle style;
+  final TextStyle? style;
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +40,7 @@ class EmojiText extends StatelessWidget {
         TextSpan(
           text: String.fromCharCodes(chunk),
           style: isEmoji
-              ? (style != null ? style : TextStyle()).copyWith(
+              ? (style != null ? style! : TextStyle()).copyWith(
                   fontFamily: 'EmojiOne',
                 )
               : style,

@@ -43,11 +43,11 @@ class ChatBloc implements Bloc {
 
   Future<ChatMessage> _sendMessage(ChatMessage message) async {
     if (kEmailRegExp.hasMatch(message.message)) {
-      final email = kEmailRegExp.firstMatch(message.message).group(0);
-      message.message = message.message.replaceFirst(email, '').trim();
+      final email = kEmailRegExp.firstMatch(message.message)?.group(0);
+      message.message = message.message.replaceFirst(email!, '').trim();
       final bodyStr = json.encode({'email': email, 'message': message.message});
       final result = await http.post(
-        'https://mcdev-n8n.duckdns.org/webhook/contact-me',
+        Uri.parse('https://mcdev-n8n.duckdns.org/webhook/contact-me'),
         headers: {'content-type': 'application/json'},
         body: bodyStr,
       );

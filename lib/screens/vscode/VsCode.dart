@@ -14,7 +14,7 @@ class _VsCodeState extends State<VsCode> {
   String code = 'Open a file...';
 
   Future<void> loadCode(String url) async {
-    final resp = await http.get(url);
+    final resp = await http.get(Uri.parse(url));
     setState(() {
       code = resp.body;
     });
